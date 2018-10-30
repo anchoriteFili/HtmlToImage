@@ -14,17 +14,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pG-bb-3Jr">
-                    <rect key="frame" x="40" y="80" width="135" height="291"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="291" id="3Th-KC-BoH"/>
-                    </constraints>
-                    <wkWebViewConfiguration key="configuration">
-                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                        <wkPreferences key="preferences"/>
-                    </wkWebViewConfiguration>
-                </wkWebView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHR-NT-RbF">
                     <rect key="frame" x="124" y="387" width="127" height="30"/>
                     <constraints>
@@ -36,28 +25,53 @@
                         <action selector="shareButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="cW4-84-GEd"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHR-8B-gii">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bHR-8B-gii">
                     <rect key="frame" x="67.5" y="448" width="240" height="157"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="xbR-Qa-NPu"/>
                     </constraints>
                 </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-Qo-ZQR">
+                    <rect key="frame" x="20" y="80" width="339" height="291"/>
+                    <subviews>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pG-bb-3Jr">
+                            <rect key="frame" x="0.0" y="0.0" width="339" height="291"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="291" id="VPJ-8Q-qi2"/>
+                            </constraints>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="3pG-bb-3Jr" firstAttribute="centerX" secondItem="qy1-Qo-ZQR" secondAttribute="centerX" id="1Zc-Pr-vTG"/>
+                        <constraint firstAttribute="height" constant="291" id="3hd-LO-2YQ"/>
+                        <constraint firstAttribute="trailing" secondItem="3pG-bb-3Jr" secondAttribute="trailing" id="E0z-Te-UXc"/>
+                        <constraint firstItem="3pG-bb-3Jr" firstAttribute="leading" secondItem="qy1-Qo-ZQR" secondAttribute="leading" id="Krw-X0-cl1"/>
+                        <constraint firstAttribute="bottom" secondItem="3pG-bb-3Jr" secondAttribute="bottom" id="lj7-bN-G1E"/>
+                        <constraint firstItem="3pG-bb-3Jr" firstAttribute="top" secondItem="qy1-Qo-ZQR" secondAttribute="top" id="zEn-Zy-hA8"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="3pG-bb-3Jr" secondAttribute="trailing" constant="200" id="3YT-fE-NNJ"/>
-                <constraint firstItem="3pG-bb-3Jr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="4QY-7b-U8B"/>
+                <constraint firstItem="qy1-Qo-ZQR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="CqG-jx-Hbr"/>
+                <constraint firstItem="qy1-Qo-ZQR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Dmh-gO-hdk"/>
                 <constraint firstAttribute="bottom" secondItem="bHR-8B-gii" secondAttribute="bottom" constant="62" id="K4W-iG-Zdf"/>
-                <constraint firstItem="3pG-bb-3Jr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="Rsh-Mb-bLe"/>
                 <constraint firstItem="bHR-8B-gii" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tru-dl-bNK"/>
-                <constraint firstItem="AHR-NT-RbF" firstAttribute="top" secondItem="3pG-bb-3Jr" secondAttribute="bottom" constant="16" id="a0O-qn-SoJ"/>
+                <constraint firstItem="AHR-NT-RbF" firstAttribute="top" secondItem="qy1-Qo-ZQR" secondAttribute="bottom" constant="16" id="VSq-yu-EXX"/>
                 <constraint firstItem="AHR-NT-RbF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aL7-Dh-QvL"/>
                 <constraint firstItem="bHR-8B-gii" firstAttribute="top" secondItem="AHR-NT-RbF" secondAttribute="bottom" constant="31" id="cRW-OD-rp9"/>
+                <constraint firstAttribute="trailing" secondItem="qy1-Qo-ZQR" secondAttribute="trailing" constant="16" id="lrB-Kw-uUe"/>
             </constraints>
             <connections>
                 <outlet property="imageview" destination="bHR-8B-gii" id="hg6-bB-MqB"/>
                 <outlet property="shareButton" destination="AHR-NT-RbF" id="eAF-2B-koP"/>
                 <outlet property="webview" destination="3pG-bb-3Jr" id="Z5V-sz-nZs"/>
+                <outlet property="webviewHeightConstraint" destination="VPJ-8Q-qi2" id="ivf-U9-XHx"/>
             </connections>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>

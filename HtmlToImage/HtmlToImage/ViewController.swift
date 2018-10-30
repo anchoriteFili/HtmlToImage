@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         htmlImageView?.frame = CGRect(x: 0, y: 0, width: WIDTH, height: HEIGHT)
         
         self.view.addSubview(htmlImageView!)
-        htmlImageView?.setUrl(url: "https://anchoritefiligod.gitee.io/blogs/2017/12/19/WKWebView%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA/")
+        htmlImageView?.setUrl(url: "http://www.runoob.com/vue2/vue-tutorial.html")
     }
 
 
