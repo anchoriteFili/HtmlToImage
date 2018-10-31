@@ -60,8 +60,6 @@ class HtmlToImageViewTool: UIView, WKUIDelegate, WKNavigationDelegate {
             }
         }
         
-        
-        
         print("页面加载结束 ******** \(webView.url?.absoluteString)")
     }
     
